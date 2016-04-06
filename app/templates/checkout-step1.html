@@ -1,0 +1,41 @@
+<!-- Template for step 1 of checkout process: the cart -->
+<h2>Your Cart</h2>
+<div class="well" ng-if="cart.length === 0">
+    Your cart is empty
+</div>
+<table class="table table-hover table-striped table-vmiddle" ng-if="cart.length > 0">
+    <thead>
+        <th></th>
+        <th colspan="2">Item</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in cart">
+            <td class="cart-remove">
+                <i ng-click="removeItem(item)" title="Remove this item from your cart" role="button" class="glyphicon glyphicon-remove-circle"></i>
+            </td>
+            <td class="cart-picture"><img ng-src="{{item.image}}"/></td>
+            <td>{{item.name}}</td>
+            <td>{{item.price | currency}}</td>
+            <td class="cart-quantity">
+                <div class="input-group">
+                    <span ng-click="decreaseQuantity(item)" role="button" class="input-group-addon"><i class="glyphicon glyphicon-minus"></i></span>
+                    <span class="form-control text-right">{{item.quantity}}</span>
+                    <span ng-click="increaseQuantity(item)" role="button" class="input-group-addon"><i class="glyphicon glyphicon-plus"></i></span>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th colspan="2"></th>
+            <th colspan="2">Total price:</th>
+            <th>{{totalPrice | currency}}</th>
+        </tr>
+    </tfoot>
+</table>
+
+<div>
+    <button ng-disabled="cart.length === 0" ng-click="gotoStep(2)" class="btn btn-primary btn-lg pull-right">Next Step <i class="glyphicon glyphicon-arrow-right"></i></button>
+</div>

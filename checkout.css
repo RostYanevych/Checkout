@@ -1,0 +1,58 @@
+.steps {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-sources {
+    margin-top: 20px;
+}
+
+.cart-picture {
+    width: 50px;
+}
+
+.cart-picture img {
+    height: 50px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.cart-picture img:hover {
+    transform: scale(3.0);
+    transform-origin: 0 50%;
+    transition-duration: 0.5s;
+    -webkit-transform: scale(3.0);
+    -webkit-transform-origin: 0 50%;
+    -webkit-transition-duration: 0.5s;
+    box-shadow: 0 0 10px #808080;
+}
+
+.table-vmiddle > tbody > tr > td {
+    vertical-align: middle;
+}
+
+.cart-quantity {
+    width: 150px;
+}
+
+.cart-remove{
+    font-size: 28px;
+    width: 30px;
+}
+
+.cart-remove > i:hover {
+    color: red;
+}
+
+input.ng-dirty.ng-invalid {
+    box-shadow: 0 0 8px rgba(233, 175, 102, 0.8);
+    border: 1px solid red;
+}
+
+.invalid-input{
+    color: #a94442;
+}
+
+.step-3 fieldset {
+    margin-top: 20px;
+}

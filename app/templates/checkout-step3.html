@@ -1,0 +1,58 @@
+<!-- Template for step 2 of checkout process: order confirmation -->
+<h2>Order Confirmation</h2>
+<p>You are about to order the following items. Please review this list before ordering.</p>
+<p>If necessary, you can go back to previous steps and update your order and personal information.</p>
+
+<fieldset>
+    <legend>Personal Information</legend>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon">Name:</span>
+                <span class="form-control">{{customer.name}}</span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-addon">Email:</span>
+                <span class="form-control">{{customer.email}}</span>
+            </div>
+        </div>
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend>Your Order</legend>
+    <table class="table table-hover table-striped table-vmiddle table-condensed">
+        <thead>
+        <th colspan="2">Item</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in cart">
+            <td class="cart-picture"><img ng-src="{{item.image}}"/></td>
+            <td>{{item.name}}</td>
+            <td>{{item.price | currency}}</td>
+            <td class="cart-quantity">
+                {{item.quantity}}
+            </td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <th></th>
+            <th colspan="2">Total price:</th>
+            <th>{{totalPrice | currency}}</th>
+        </tr>
+        </tfoot>
+    </table>
+
+</fieldset>
+
+<div class="form-group">
+    <button ng-click="gotoStep(2)" class="btn btn-primary btn-lg pull-left"><i class="glyphicon glyphicon-arrow-left"></i> Prior Step</button>
+    <button ng-click="orderConfirmation()" class="btn btn-success btn-lg pull-right"> <i class="glyphicon glyphicon-gift"></i> Order</button>
+</div>
+

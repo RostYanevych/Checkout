@@ -1,0 +1,12 @@
+<!-- Steps indicator -->
+<div title="Statuses to show" class="steps btn-group" role="group">
+    <div ng-repeat="step in checkoutSteps" class="btn btn-default btn-lg check-btn" ng-class="{'active': currentStep >= $index+1}">
+        <i class="glyphicon {{step.icon}}"></i>
+        {{step.label}}
+    </div>
+</div>
+<!-- End of Steps indicator -->
+
+<!-- Template for the current step -->
+<div class="checkout-step step-{{currentStep}}" ng-include="'app/templates/checkout-step' + currentStep + '.html'"></div>
+<!-- End of template for the current step -->

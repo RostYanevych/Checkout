@@ -1,0 +1,25 @@
+<!-- Template for step 2 of checkout process: customer info -->
+<h2>Customer Information</h2>
+<form name="customerForm" role="form">
+    <div class="row col-md-9">
+
+        <div class="form-group">
+            <label class="control-label">Name</label>
+            <input name="Name" class="form-control" type="text" autofocus required ng-model="customer.name"/>
+            <span ng-show="customerForm.Name.$error.required" class="invalid-input">* required</span>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Email</label>
+            <input name="Email" class="form-control" type="email" required ng-model="customer.email">
+            <span ng-show="customerForm.Email.$error.required" class="invalid-input">* required</span>
+            <span ng-show="customerForm.Email.$error.email" class="invalid-input">* invalid email</span>
+        </div>
+
+        <div class="form-group">
+            <button ng-click="gotoStep(1)" class="btn btn-primary btn-lg pull-left"><i class="glyphicon glyphicon-arrow-left"></i> Prior Step</button>
+            <button ng-disabled="customerForm.$invalid" ng-click="gotoStep(3)" class="btn btn-primary btn-lg pull-right"> Next Step <i class="glyphicon glyphicon-arrow-right"></i></button>
+        </div>
+
+    </div>
+</form>
