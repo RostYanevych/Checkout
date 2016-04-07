@@ -2,7 +2,7 @@
  * Checkout controller
  */
 angular.module('CheckoutApp')
-    .controller('CheckoutController', function($scope, $modal, checkoutService) {
+    .controller('CheckoutController', function($scope, $uibModal, checkoutService) {
 
         $scope.currentStep = 1; //current checkout step
         $scope.totalPrice = 0; //price of all items in cart
@@ -68,7 +68,7 @@ angular.module('CheckoutApp')
          * Show order confirmation modal message
          */
         $scope.orderConfirmation = function(){
-            $modal.open({
+            $uibModal.open({
                 animation: true,
                 size: 'lg',
                 scope: $scope,

@@ -16,13 +16,12 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
 //      'tests/*.js',
-//      'app/*.js'
         'http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js',
-        'angular-1.4.5/angular.js',
-        'angular-1.4.5/angular-route.js',
-        'angular-1.4.5/angular-animate.min.js',
-        'angular-1.4.5/angular-mocks.js',
-        'angular-ui.bootstrap/ui-bootstrap-tpls-0.13.4.min.js',
+        'angular-1.5.3/angular.js',
+        'angular-1.5.3/angular-route.js',
+        'angular-1.5.3/angular-animate.min.js',
+        'angular-1.5.3/angular-mocks.js',
+        'angular-ui.bootstrap/ui-bootstrap-tpls-1.3.1.js',
         'app/app.js',
         'app/checkout-service.js',
         'app/checkout-controller.js',
@@ -67,7 +66,7 @@ module.exports = function(config) {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     // browsers: ['Chrome', 'PhantomJS'],
-      browsers: ['Chrome'],
+      browsers: ['PhantomJS'],
 
 
     // Continuous Integration mode

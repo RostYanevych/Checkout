@@ -13,6 +13,6 @@ describe('Checkout Service', function () {
     it('should calculate total price',
         function () {
             var total = checkoutService.calculateTotal();
-            expect(total).toEqual(2001);
+            expect(total).toEqual(200);
         });
 });
